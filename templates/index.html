@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Subir Imagen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Imágenes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
 </head>
 <body>
-    <h1>Subir Imagen</h1>
-    <form action="/subir" method="POST" enctype="multipart/form-data">
-        <input type="file" name="imagen" required>
-        <button type="submit">Subir</button>
-    </form>
+    <div class="container">
+        <!-- Frame 1: Barra de menú superior -->
+        <div class="menu-bar">
+            {% include 'menu_bar.html' %}
+        </div>
+
+        <!-- Contenedor principal para Frame 2 y Frame 3 -->
+        <div class="main-content">
+            <!-- Frame 2: Área de canvas/imagen central -->
+            <div class="canvas-area">
+                {% include 'canvas_area.html' %}
+            </div>
+
+            <!-- Frame 3: Barra de herramientas lateral derecha -->
+            <div class="tools-sidebar">
+                {% include 'tools_sidebar.html' %}
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
