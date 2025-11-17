@@ -1,0 +1,49 @@
+<!-- Frame 2: Área de Canvas/Imagen Central -->
+<div class="canvas-container">
+    <!-- Panel de información superior -->
+    <div class="canvas-info">
+        <div class="info-group">
+            <label>X:</label>
+            <input type="number" id="pos-x" value="0" readonly>
+        </div>
+        <div class="info-group">
+            <label>Y:</label>
+            <input type="number" id="pos-y" value="0" readonly>
+        </div>
+        <div class="info-group">
+            <label>Ancho:</label>
+            <input type="number" id="img-width" value="0" readonly>
+        </div>
+        <div class="info-group">
+            <label>Alto:</label>
+            <input type="number" id="img-height" value="0" readonly>
+        </div>
+        <div class="info-group">
+            <label>Zoom:</label>
+            <span id="zoom-level">100%</span>
+        </div>
+    </div>
+
+    <!-- Área de trabajo principal -->
+    <div class="workspace">
+        <div class="canvas-wrapper">
+            <!-- Canvas donde se dibujará/editará la imagen -->
+            <canvas id="main-canvas"></canvas>
+            
+            <!-- Mensaje cuando no hay imagen -->
+            <div class="empty-state" id="empty-state">
+                <div class="empty-icon">🖼️</div>
+                <p>No hay imagen cargada</p>
+                <p class="empty-hint">Haz clic en "Cargar" para comenzar</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles de zoom inferiores -->
+    <div class="canvas-controls">
+        <button class="control-btn" id="zoom-out">-</button>
+        <input type="range" id="zoom-slider" min="10" max="200" value="100">
+        <button class="control-btn" id="zoom-in">+</button>
+        <button class="control-btn" id="zoom-fit">Ajustar</button>
+    </div>
+</div>
