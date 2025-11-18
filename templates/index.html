@@ -26,8 +26,9 @@
             </div>
         </div>
     </div>
-
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/area_workspace/cargar_imagen.js') }}"></script>
+
+    <script type="module" src="{{ url_for('static', filename='js/shared_elements.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/area_workspace/cargar_imagen.js') }}"></script>
 </body>
 </html>

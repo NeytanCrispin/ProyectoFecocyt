@@ -1,16 +1,8 @@
-const canvas = document.getElementById("main-canvas");
-const ctx = canvas.getContext("2d");
-const emptyState = document.getElementById("empty-state");
-// Puedes elegir si el área de drop es ".workspace" o ".canvas-wrapper"
-const wrapper = document.querySelector(".workspace");
+import { canvas, ctx, emptyState, wrapper } from '/static/js/shared_elements.js';
 
 // Inicialmente: mostrar solo el mensaje vacío
 canvas.style.display = "none";
 emptyState.style.display = "block";
-
-// Ajustar tamaño del canvas
-canvas.width = 600;
-canvas.height = 400;
 
 // Evitar que el navegador abra la imagen al soltarla
 wrapper.addEventListener("dragover", (e) => {
@@ -27,13 +19,17 @@ wrapper.addEventListener("drop", (e) => {
     reader.onload = function(event) {
       const img = new Image();
       img.onload = function() {
-        // Cuando hay imagen: mostrar canvas y ocultar mensaje vacío
+        // Ajustar el tamaño del canvas al tamaño real de la imagen
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        // Mostrar canvas y ocultar mensaje vacío
         emptyState.style.display = "none";
         canvas.style.display = "block";
 
         // Limpiar canvas y dibujar la imagen
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
       };
       img.src = event.target.result;
     };
