@@ -115,6 +115,8 @@ body {
     padding: 12px 16px;
     background: #2e2e2e;
     border-bottom: 1px solid #1a1a1a;
+    position: relative;   /* obligatorio */
+    z-index: 10;          /* para que esté encima */
 }
 
 .info-group {
@@ -150,7 +152,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: auto;
+    overflow: hidden;
     padding: 20px;
     background: 
         repeating-linear-gradient(
@@ -207,15 +209,6 @@ body {
 .empty-hint {
     font-size: 14px !important;
     color: #666 !important;
-}
-
-.canvas-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    background: #2e2e2e;
-    border-top: 1px solid #1a1a1a;
 }
 
 .control-btn {

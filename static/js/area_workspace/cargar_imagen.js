@@ -23,6 +23,11 @@ wrapper.addEventListener("drop", (e) => {
         canvas.width = img.width;
         canvas.height = img.height;
 
+        // Actualizar los valores de Alto y Ancho en el HTML
+        document.getElementById("img-width").value = img.width;
+        document.getElementById("img-height").value = img.height;
+
+
         // Mostrar canvas y ocultar mensaje vacío
         emptyState.style.display = "none";
         canvas.style.display = "block";
